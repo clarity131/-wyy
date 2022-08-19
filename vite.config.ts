@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import {resolve} from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import { VantResolver } from 'unplugin-vue-components/resolvers';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -19,6 +20,7 @@ export default defineConfig({
       directoryAsNamespace: true,
       //指定类型声明文件，为true时在项目根目录创建
       dts: 'types/components.d.ts',
+      resolvers: [VantResolver()],
     })
   ],
   resolve:{

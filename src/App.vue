@@ -5,11 +5,17 @@
 </script>
 
 <template>
-  <div>
     <router-view></router-view>
-  </div>
 </template>
 
-<style scoped>
-
+<style lang="scss">
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+ .icon {
+  width: .6rem;
+  height: .6rem;
+ }
 </style>
