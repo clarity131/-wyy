@@ -10,7 +10,7 @@
       <Item v-for="item in title" :title="item.name" :pd="xs" @click="qiehuan(item.name)">
       </Item>
     </div>
-    <div class="topRight">
+    <div class="topRight" @click="$router.push('/search')">
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-sousuo"></use>
       </svg>

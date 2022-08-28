@@ -5,14 +5,16 @@
       <div class="title1">{{title1}}</div>
       <div class="title2">{{title2}}</div>
     </div>
-    <div class="musicContent">
+    <div class="musicContent" >
       <van-swipe :loop="false" :width="150" class="my-swiper" :show-indicators="false">
         <van-swipe-item v-for="item in list" :key="item.id">
-          <div class="imgBox"><img :src="item.picUrl" alt=""/></div>
-          <span class="playCount">
-            {{changeCount(item.playCount)}}
-          </span>
-          <span class="name">{{item.name}}</span>
+          <router-link :to="{path:'/itemMusic', query: {id: item.id}}">
+            <div class="imgBox"><img :src="item.picUrl" alt=""/></div>
+            <span class="playCount">
+              {{changeCount(item.playCount)}}
+            </span>
+            <span class="name">{{item.name}}</span>
+          </router-link>
         </van-swipe-item>
       </van-swipe>
     </div>
@@ -35,7 +37,6 @@ import { personaLizedRes } from 'types';
   const getMusicList = async () => {
     const data = await personaLized()
     list.value = data.result
-    console.log(list.value)
   }
   const changeCount = (num:number) => {
     if (num >= 100000000) {

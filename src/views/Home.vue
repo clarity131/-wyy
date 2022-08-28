@@ -2,9 +2,14 @@
 <template>
   <div class="home">
     <TopNav></TopNav>
-    <Swiper :banners="banners"></Swiper>
+    <keep-alive>
+      <Swiper :banners="banners"></Swiper>
+    </keep-alive>
     <IconList></IconList>
+    <keep-alive>
     <MusicList></MusicList>
+    </keep-alive>
+    <!-- <button @click="dl">登录</button> -->
   </div>
 </template>
 
@@ -23,6 +28,10 @@ import IocoList from '@/components/IconList/index.vue';
     const data = await banner()
     banners.value = data.banners
  }
+//  const dl = async () => {
+//     let data = await login()
+//     console.log(data)
+//  }
  getBanner()
 
  

@@ -1,3 +1,5 @@
+import { songsItem } from "./playListDetail"
+
 export interface ManageResult<T = {}> {
   code: number,
   result: T
@@ -15,4 +17,15 @@ export interface personaLizedRes {
   trackCount: number
   trackNumberUpdateTime: number
   type: number
+}
+
+// vuex state
+export interface IState {
+  playList: songsItem[]
+  musicUrl: string
+  playListIdx: number
+  musicBoolean: boolean
+  musicShow: boolean
+  currentTime: number
+  duration: number
 }
