@@ -23,7 +23,7 @@ function code (err: Ierr) {
       err.message = '未授权，请重新登陆'
       break
     case 403 :
-      err.message = '拒绝访问'
+      err.message = '拒绝访问2'
       break
     case 404 :
       err.message = '请求地址错误'
